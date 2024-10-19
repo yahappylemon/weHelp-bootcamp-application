@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeHelp Bootcamp Application</title>
+    <script
+      src="https://kit.fontawesome.com/bdcf15b1c1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="https://fav.farm/👩🏻‍💻" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- 導覽列 -->
+    <header>
+      <nav>
+        <!-- 標籤列：切換題目 -->
+        <ul class="tab-bar">
+          <li><button class="active-tab" data-tab="0">😀個人背景</button></li>
+          <li><button data-tab="1">📖相關學習</button></li>
+          <li><button data-tab="2">⌛時間安排</button></li>
+          <li><button data-tab="3">💻正確選擇</button></li>
+          <li><button data-tab="4">🙁情緒處理</button></li>
+          <li><button data-tab="5">🔧開發心得</button></li>
+          <li><button data-tab="6">💼社會連結</button></li>
+        </ul>
+      </nav>
+      <!-- 網址列：控制題數、顯示題目 -->
+      <div class="url">
+        <div class="controls">
+          <!-- 上一題 -->
+          <button data-jump="minus">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <!-- 下一題 -->
+          <button data-jump="plus">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <!-- 回第一題 -->
+          <button data-jump="0">
+            <i class="fa-solid fa-house"></i>
+          </button>
+        </div>
+        <ul>
+          <li class="active-url" data-url="0">個人簡介和申請動機</li>
+          <li data-url="1">曾經做過哪些軟體工程技術相關的學習？</li>
+          <li data-url="2">如果參與訓練會怎麼安排學習時間？</li>
+          <li data-url="3">如何確定選擇投入的領域是正確有回報的？</li>
+          <li data-url="4">請描述一件產生明顯負面情緒的經歷</li>
+          <li data-url="5">關於這份申請網頁開發時的技術心得</li>
+          <li data-url="6">如何看待自身工作和整個社會群體的連結關係？</li>
+        </ul>
+      </div>
+    </header>
+    <!-- 答案區 -->
+    <main>
+      <ul class="text">
+        <li>
+          <div class="active-text" data-text="0">
+            <h2>個人簡介</h2>
+            <p>
+              我是<strong>李閣兒</strong>，台北人，今年28歲，高中畢業於中山女高，大學就讀<strong>中央警察大學</strong>，在校期間積極學習，最終以第二名的成績畢業，並<strong>錄取特考榜首</strong>。擔任4年公務員後，已於<strong>今年6月離職</strong>，並重新規劃自己的職涯方向。
+              平時興趣為英文，曾考取<strong>多益930分、雅思7.5分</strong>，並通過全民英檢中高級。
+            </p>
+            <hr />
+            <h2>申請動機</h2>
+            <p>
+              擔任公務員期間，雖然有著優渥的薪水及穩定的工作，所做之事卻經常流於形式，或面臨因人設事之情形，與我的個性及原則相悖，使我反思人生及工作的意義，並毅然決然辭職，希望未來能投入軟體產業：
+            </p>
+            <ul class="flex">
+              <li>
+                <h3>Why Software</h3>
+                <ul class="list">
+                  <li>
+                    <strong>學習資源豐富</strong
+                    >：由於大學畢業於文組科系，並無太多專業技能或知識，使得轉職選項有限，而網路上有豐富的程式語言、電腦科學相關資源，<strong>得以突破科系限制</strong>。
+                  </li>
+                  <li>
+                    <strong>回歸助人初衷</strong
+                    >：我認為撰寫程式，除了可以幫助自己擁有一技之長，更能夠<strong>利用所學滿足社會需求、幫助他人</strong>，相當有意義。
+                  </li>
+                  <li>
+                    <strong>對英文之熱忱</strong
+                    >：學習程式需要<strong>閱讀原文技術文章及官方文檔</strong>，並可藉由貢獻開源<strong>與各國的軟體工程師交流互動</strong>，能夠結合我對英文的興趣。
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3>Why weHelp</h3>
+                <ul class="list">
+                  <li>
+                    <strong>補足與業界差距</strong
+                    >：經過半年自學，我<strong>雖然已經掌握前端程式語言、框架</strong>的基本概念及語法，並嘗試開發作品，卻深知<strong>此程度仍與業界需求相差甚遠</strong>，因此認為還是有參加培訓營的必要。
+                  </li>
+                  <li>
+                    <strong>培養獨立解決問題能力</strong
+                    >：相較其他培訓營以講師授課為主，weHelp<strong>以「任務」為導向</strong>的訓練模式及教學理念，是我最認同的；透過分派作業之方式學習，更<strong>貼近於實際工作情形</strong>，並養成軟體工程師<strong>獨立解決問題</strong>的能力與條件。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div data-text="1">
+            <p>
+              2023年底，我開始接觸CS的相關知識，然忙於工作仍未全心投入；離職後，我<strong>每天花8至10小時自主學習前端相關技能</strong>：
+            </p>
+            <ul class="flex">
+              <li>
+                <h2>電腦科學基礎知識</h2>
+                <p>
+                  今年2月曾報考<strong>清大資應所（備取24名）</strong>，雖未錄取，但備考期間藉由《Foundations
+                  of Computer Science》、《Computer Science: An
+                  Overview》教科書，以及哈佛CS50等課程學習<strong>計算機概論</strong>；現在持續利用大學開放式課程學習<strong>演算法及資料結構</strong>，補足計算機底層相關知識。
+                </p>
+              </li>
+              <li>
+                <h2>程式語言</h2>
+                <p>
+                  目前已<strong>掌握HTML、CSS、JavaScript、React</strong>語法，對<strong
+                    >Tailwind CSS、TypeScript、Next.js</strong
+                  >有所了解，並透過Notion整理筆記；在學習完程式語法後，我透過<a
+                    href="https://javascript30.com/"
+                    target="_blank"
+                    ><strong>JS30</strong></a
+                  >增強我的JavaScript應用技巧，並完成<strong
+                    ><a href="https://wehelp.tw/coding/ranking" target="_blank"
+                      >weHelp Coding</a
+                    >全數題目 （排名19名，接受率70.6%）</strong
+                  >，以加強我的程式邏輯及觀念。
+                </p>
+                <img
+                  src="./images/wehelp coding.png"
+                  alt="wehelp coding result"
+                />
+              </li>
+            </ul>
+            <p>以下是部分我在Udemy完成的課程清單：</p>
+            <ul class="flex">
+              <li>
+                <ul class="list">
+                  <li>
+                    <a
+                      href="https://www.udemy.com/course/algorithm-data-structure/?couponCode=24T1MT101824"
+                      target="_blank"
+                      ><strong>資料結構與演算法 (JavaScript)</strong></a
+                    >：課程時長25小時
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.udemy.com/course/understand-javascript/?couponCode=KEEPLEARNING"
+                      target="_blank"
+                      ><strong
+                        >JavaScript: Understanding the Weird Parts</strong
+                      ></a
+                    >：課程時長12小時
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul class="list">
+                  <li>
+                    <a
+                      href="https://www.udemy.com/course/wilson-full-stack-web-development/?couponCode=KEEPLEARNING"
+                      target="_blank"
+                      ><strong>2024 網頁全端開發</strong></a
+                    >：課程時長80小時
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
+                      target="_blank"
+                      ><strong>React - The Complete Guide 2024 </strong></a
+                    >：課程時長68小時
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h2>作品分享</h2>
+            <ul class="flex">
+              <li>
+                <a
+                  href="https://yahappylemon.github.io/frontend-mentor-practice/"
+                  target="_blank"
+                  ><h3>Frontend Mentor</h3>
+                  <img
+                    src="./images/frontend mentor.png"
+                    alt="frontend mentor website"
+                  />
+                </a>
+                <p>
+                  在看了許多教學影片、學習完HTML、CSS、JavaScript後，仍缺乏實戰經驗，因此我從<a
+                    href="https://www.frontendmentor.io/home"
+                    target="_blank"
+                    >Frontend Mentor</a
+                  >完成的了8項挑戰，並在大部分作品的README文件，以<strong>英文分享我開發時的心得</strong>與學習；過程中除了加強我的切版、操作DOM的技巧，在完成挑戰後，也透由該網站的peer
+                  review機制，<strong>閱讀其他挑戰者的原始碼、給予回饋</strong>，得到許多收穫。
+                </p>
+              </li>
+              <li>
+                <a
+                  href="https://yahappylemon.github.io/user-center/auth?mode=login"
+                  target="_blank"
+                  ><h3>Customer Management System</h3>
+                  <img
+                    src="./images/user center.png"
+                    alt="customer management system website"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div data-text="2">
+            <p>
+              若有幸參加weHelp
+              Bootcamp，我將<strong>維持現階段已經建立起的作息</strong>（9時至24時，除用餐、運動外，皆投入程式學習），以<strong>自律、積極</strong>的態度學習知識，期許自己在這26
+              週期間，成為<strong>具備獨立解決問題能力的工程師</strong>：
+            </p>
+            <ul class="flex">
+              <li>
+                <h2>第一階段：網站開發基礎（1至3月）</h2>
+                <ul class="list">
+                  <li>
+                    9-12時：<strong>複習JavaScript</strong>基礎知識及運作原理、學習並<strong>熟悉Python</strong>語法
+                  </li>
+                  <li>
+                    13-20時：<strong>完成當週任務</strong>、加強較不擅長/不熟悉之技能（如RWD網頁切版、架設伺服器、串接資料庫等）
+                  </li>
+                  <li>
+                    22-24時：<strong>撰寫每日進度報告</strong>、透過YouTube等管道針對當週任務運用之關鍵技術進行更深入探討
+                  </li>
+                  <li>
+                    其他：於2月<strong>參加研究所考試</strong>，檢視自己這段時間對於計算機底層相關知識的學習成果
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h2>第二階段：電商網站實務（3至5月）</h2>
+                <ul class="list">
+                  <li>
+                    9-12時：<strong>學習新技術</strong>（如AWS服務、金流串接）、加強較不擅長之技能（如Git、Grid
+                    Layout）
+                  </li>
+                  <li>13-20時：<strong>完成當週任務</strong></li>
+                  <li>
+                    22-24時：<strong>撰寫每日進度報告</strong>、透過YouTube等管道針對當週任務運用之關鍵技術進行更深入探討
+                  </li>
+                  <li>
+                    其他：視情況<strong>就讀</strong>大學開設之資料結構、作業系統<strong>隨班附讀課程</strong>，以補足資工相關學分
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h2>第三階段：個人專案、求職準備（5至7月）</h2>
+                <ul class="list">
+                  <li>9-12時：<strong>個人專案發想、規劃</strong></li>
+                  <li>13-20時：<strong>完成個人專案</strong></li>
+                  <li>
+                    22-24時：撰寫每日進度報告、<strong>履歷準備</strong>、面試練習
+                  </li>
+                  <li>
+                    其他：利用<a
+                      href="https://www.explainthis.io/zh-hant/swe/interview"
+                      target="_blank"
+                      >ExplainThis</a
+                    >等資源準備面試、嘗試<strong>解LeetCode題</strong>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div data-text="3">
+            <p>
+              不可否認，多數長輩在聽到我要轉軟體工程師後，會以<strong>低薪、未來將被取代等理由勸退</strong>我；面對這些質疑時，我認為最好的方式是<strong>檢視自身條件、做好最壞打算</strong>，雖然仍沒有辦法保證是正確選擇，但至少可以確定，這是<strong>當下最好的決定</strong>：
+            </p>
+            <ul class="flex">
+              <li>
+                <h2>檢視自身條件</h2>
+                <p>
+                  許多人轉職前只看到軟體業的光明面，卻忽略背後的努力及辛苦；對我而言，想要成為軟體工程師的主要原因是<strong>自我實現、追求卓越</strong>。
+                  離職後這半年的自學，我想我已經至少符合彭彭<a
+                    href="https://cwpeng.medium.com/%E8%BD%89%E8%81%B7%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B9%8B%E6%97%85-%E8%A1%8C%E5%89%8D%E6%BA%96%E5%82%99-53620d8ace79"
+                    target="_blank"
+                    ><strong>「轉職軟體工程師之旅：行前準備」</strong></a
+                  >文章中的以下條件：
+                </p>
+                <ul class="list">
+                  <li>
+                    徹底<strong>放棄所有天真的想法</strong>、認清自己只是一個普通人
+                  </li>
+                  <li>
+                    準備好<strong
+                      >半年以上的時間、每天持續學習 6 小時以上</strong
+                    >，心無旁鶩的學習
+                  </li>
+                  <li>財務足以應付短期內無法順利找到工作的困境</li>
+                  <li>無論如何都<strong>不願意走回頭路</strong></li>
+                </ul>
+              </li>
+              <li>
+                <h2>做好最壞打算</h2>
+                <p>
+                  認清所有決定本來就是<strong>機會與風險並存</strong>，並且義無反顧的努力後，若結果還是不如預期，也只能<strong>誠實面對自己、接受事實</strong>：
+                </p>
+                <ul class="list">
+                  <li>
+                    <strong>轉職失敗怎麼辦</strong
+                    >：也許代表<strong>軟體工程師真的不適合自己</strong>，即便轉職成功也只會更加痛苦；我會依照當時的情境，去選擇下一份對我而言最具有意義、能夠自我實踐的工作。
+                  </li>
+                  <li>
+                    <strong>被AI取代怎麼辦</strong
+                    >：除了<strong>不斷追求進步、吸收新知</strong>，避免自己被淘汰，可以<strong>正向看待軟體技術日新月異</strong>；技術的更新迭代意味著科技的進步，如果哪一天AI真的能讓人類從勞動力中解放，我想也不是一件壞事。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              最後，我認為並<strong>沒有所謂「正確」的選擇</strong>，如同賈伯斯所說<em
+                ><strong
+                  >You can't connect the dots looking forward; you can only
+                  connect them looking backwards. So you have to trust that the
+                  dots will somehow connect in your future</strong
+                ></em
+              >，這段時間的努力總會有它的意義。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div data-text="4">
+            <ul class="flex">
+              <li>
+                <h2>事發經過</h2>
+                <p>
+                  在我擔任公職第四年時，被調換到一個新的組別，為了熟悉新業務，我每天加班至八、九點，<strong>組長明知我的狀況，卻為了討好組內較資深的學長</strong>，將其部分業務轉移至我身上。
+                  <br />
+                  原本組長只請我承擔一部分，因此我沒有太過於計較，沒想到該學長天天準時下班，卻表示自己負擔還是太重，組長便<strong>將整個業務移轉給我</strong>，以能者多勞等說辭迴避自身管理問題。
+                  <br />
+                  由於公家體系強調以和為貴、非常重視資歷及輩分，因此聽到組長要這麼做的當下，我也無能為力，<strong>只能面帶微笑強忍內心的憤怒</strong>。
+                </p>
+              </li>
+              <li>
+                <h2>情緒處理</h2>
+                <p>然而，憤怒不能解決問題，因此我採取了以下方法處理情緒：</p>
+                <ul class="list">
+                  <li>
+                    <strong>採取行動</strong
+                    >：隔日，我便<strong>禮貌地向組長寫信，表達此事不合理之處</strong>，並清楚傳達我可以在我的能力範圍內提供該學長協助，然不應將該學長份內之事轉移給其他人，<strong>組長表面看似同意，日後卻處處針對、刁難我</strong>。
+                  </li>
+                  <li>
+                    <strong>理性分析</strong
+                    >：就結果來看，上述處理方式似非最佳解，但我<strong>再次思考這件事的起因、反省我是否有不對之處</strong>，並理解公家機關勞逸不均的風氣並非我一己之力所能改變，與其對抗整個體制，不如<strong>選擇改變自己、離開這樣的環境</strong>。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div data-text="5">
+            <ul class="flex">
+              <li>
+                <h2>此申請網頁心得</h2>
+                <p>
+                  由於此網頁是以簡單的<strong>HTML、SASS、JavaScript</strong>完成，我並沒有研究太多新技術，以複習過去所學為主：
+                </p>
+                <ul class="list">
+                  <li>
+                    <strong>RWD</strong>：我在<a
+                      href="https://courses.kevinpowell.co/conquering-responsive-layouts"
+                      target="_blank"
+                      ><strong>Conquering Responsive Layouts</strong></a
+                    >課程中，學習到以<strong>mobile first</strong
+                    >會讓RWD製作起來更為方便；因此我先以手機板為主，將電腦版的CSS設定在@media。
+                  </li>
+                  <li>
+                    <strong>結構一致性</strong
+                    >：不論是HTML或CSS的class，我都盡量保持結構的一致性及清晰度，並添加註解，以利閱讀者清楚每一個元件的功能。
+                  </li>
+                  <li>
+                    <strong>使用data-*屬性</strong
+                    >：為統一題數設定，我使用我在<a
+                      href="https://yahappylemon.github.io/frontend-mentor-practice/Tip-calculator-app/index.html"
+                      target="_blank"
+                      ><strong>Frontend Mentor Tip Calculator</strong></a
+                    >所採用的方法，為導覽列及答案區加上相對應的<strong>自定義屬性</strong>，不僅在獲取DOM時更方便，更可以同時處理三個元件的狀態，讓函數結構更簡單。
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h2>Customer Management System</h2>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div data-text="6">
+            <p>
+              如何看待工作與社會的連結<strong>取決於一個人的價值觀</strong>，只在乎金錢的人，從事危害社會的工作也在所不惜；對我而言，自身的工作要在<strong>追求自我成長</strong>的同時，<strong>對大眾產生助益</strong>，進而回饋社會、創造價值：
+            </p>
+            <ul class="flex">
+              <li>
+                <h2>我過去的工作</h2>
+                <ul class="list">
+                  <li>
+                    <strong>難以追求自我成長</strong
+                    >：公部門可說是進步最為緩慢的產業之一，不僅所有技術都停留在使用在十、二十年前，<strong>保守封閉的風氣</strong>更讓所有人寧可維持現狀，進而形成<strong>養老、不求長進</strong>的環境。
+                  </li>
+                  <li>
+                    <strong>對大眾助益有限</strong>
+                    ：公家機關本應為國民謀福利，是對大眾最有助益的工作，然實際工作時卻經常面臨<strong>所做之事流於形式、無法實質解決問題</strong>的窘境，導致大眾的利益無形中遭到損害。
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h2>我期待的工作</h2>
+                <ul class="list">
+                  <li>
+                    <strong>能夠追求自我成長</strong
+                    >：面對多變的市場、技術的更新，軟體工程師<strong>必須持續進步</strong>避免被淘汰；而不斷精進自己的技能、學習新知識的過程中，將<strong>滿足自我實現</strong>的需求。
+                  </li>
+                  <li>
+                    <strong>對大眾之助益有無限可能</strong>：
+                    軟體工程師<strong>掌握了技術</strong>，有能力幫助客戶解決問題，因此回饋社會、創造價值並不是一件難事，只要選擇對的服務對象，<strong>對大眾之助益有著無限的潛力</strong>。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <em
+                ><strong
+                  >Your work is going to fill a large part of your life, and the
+                  only way to be truly satisfied is to do what you believe is
+                  great work.</strong
+                >-Steve Jobs</em
+              >
+            </p>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

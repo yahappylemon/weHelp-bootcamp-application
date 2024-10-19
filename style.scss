@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+$very-dark-blue: hsl(226, 43%, 10%, 0.85);
+$very-light-gray: hsl(204, 15%, 94%, 0.5);
+$light-gray: #eeeeee;
+$dark-gray: hsl(0, 0%, 75%);
+$highlight: rgba(255, 255, 0, 0.2);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  min-height: 100vh;
+  color: $very-dark-blue;
+  background-color: $very-light-gray;
+  border: $very-dark-blue solid 10px;
+  border-radius: 30px;
+  line-height: 1.6;
+  &::before {
+    content: "";
+    padding-inline: 20%;
+    border-radius: 0 0 10px 10px;
+    background-color: $very-dark-blue;
+    position: relative;
+    left: 28%;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h2 {
+  margin-block: 5px;
+  background-color: $highlight;
+  width: fit-content;
+}
+h3 {
+  padding: 2.5px;
+}
+
+hr {
+  margin-block: 10px;
+}
+
+button,
+a {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: underline;
+}
+
+// 標籤列
+.tab-bar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  background-color: $light-gray;
+  button {
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    background-color: $light-gray;
+    transition: background-color 0.3s;
+    font-size: large;
+    font-weight: 600;
+    &:hover {
+      background-color: $dark-gray;
+      transition: all 0.5s linear;
+    }
+  }
+  .active-tab {
+    background-color: $dark-gray;
+  }
+}
+
+// 網址列
+.url {
+  display: flex;
+  gap: 15px;
+  background-color: $dark-gray;
+  padding: 15px;
+  align-items: center;
+  ul {
+    background-color: $light-gray;
+    border-radius: 15px;
+    padding: 5px 5px 5px 20px;
+    flex-grow: 1;
+  }
+  li {
+    display: none;
+    font-weight: 500;
+  }
+  .active-url {
+    display: block;
+  }
+}
+
+// 控制題數按鈕
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+// 答案區
+.text {
+  width: 92%;
+  margin: 0 auto;
+  padding-block: 10px;
+  div {
+    display: none;
+  }
+  .active-text {
+    display: block;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+// 列表
+.list {
+  margin-left: 20px;
+  li {
+    list-style: outside "👉🏼";
+    font-weight: 300;
+    padding-top: 5px;
+  }
+}
+
+// 電腦版
+@media (min-width: 750px) {
+  body {
+    border: none;
+    border-radius: 0px;
+  }
+  body::before {
+    display: none;
+  }
+  // 滾動時導覽列貼齊畫面上方
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+  // 並排顯示答案
+  .flex {
+    display: flex;
+    gap: 30px;
+    padding-block: 10px;
+    li {
+      width: 90%;
+    }
+  }
+}
+
+// 螢幕寬度無法容納標籤列時改變顯示模式
+@media (max-width: 260px) {
+  .tab-bar {
+    display: block;
+  }
+  .url {
+    flex-direction: column;
+  }
+}
