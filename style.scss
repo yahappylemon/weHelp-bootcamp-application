@@ -170,6 +170,22 @@ a {
       width: 90%;
     }
   }
+  .text {
+    .profile {
+      display: flex;
+      gap: 30px;
+    }
+    .photo {
+      display: block;
+      // img {
+      //   max-height: 600px;
+      // }
+    }
+    // p,
+    // .profile {
+    //   max-width: 90%;
+    // }
+  }
 }
 
 // 螢幕寬度無法容納標籤列時改變顯示模式

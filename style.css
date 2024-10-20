@@ -159,6 +159,13 @@ a {
   .flex li {
     width: 90%;
   }
+  .text .profile {
+    display: flex;
+    gap: 30px;
+  }
+  .text .photo {
+    display: block;
+  }
 }
 @media (max-width: 260px) {
   .tab-bar {
