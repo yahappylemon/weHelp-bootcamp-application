@@ -172,19 +172,19 @@ a {
   }
   .text {
     .profile {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 300px;
       gap: 30px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
     }
     .photo {
       display: block;
-      // img {
-      //   max-height: 600px;
-      // }
+      align-self: center;
     }
-    // p,
-    // .profile {
-    //   max-width: 90%;
-    // }
   }
 }
 

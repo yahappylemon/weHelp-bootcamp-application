@@ -160,11 +160,18 @@ a {
     width: 90%;
   }
   .text .profile {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 300px;
     gap: 30px;
+  }
+  .text .profile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .text .photo {
     display: block;
+    align-self: center;
   }
 }
 @media (max-width: 260px) {
